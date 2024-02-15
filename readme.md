@@ -112,7 +112,7 @@ int main() {
 }
 ```
 
-#### parimpar.c
+#### desvio de fluxo: parimpar.c
 
 ```c
 #include<stdio.h>
