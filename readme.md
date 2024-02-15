@@ -132,7 +132,7 @@ int main() {
 }
 ```
 
-#### media_aluno.c
+#### Desvio de fluxo: media_aluno.c
 
 ```c
 /*
