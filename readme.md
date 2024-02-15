@@ -122,7 +122,7 @@ int main() {
     printf("Digite um número:\n");
     scanf("%d",&num);
 
-    if(num % 2 == 0){
+    if(num % 2 == 0){ //caso a divisão do número dê 0 ele será par
         printf("Este número é par\n");
     }
     else {
