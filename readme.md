@@ -227,7 +227,7 @@ int main (){
 }
 ```
 
-#### Arquivo while_dec_bin
+#### Arquivo while_dec_bin.c
 
 ```c
 #include <stdio.h>
@@ -246,6 +246,28 @@ int main(){
         pos = pos * 10;
     }
     printf("%d\n",rs);
+    return 0;
+}
+```
+
+#### Arquivo while_bin_dec.c
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int binario[6] = {1,0,1,1,1,0};
+
+    int rs = 0;
+    int pos = 0;
+    int exp = 5;
+    while (pos <= 5){
+        rs += binario[pos] * ( pow(2, exp));
+        pos++;
+        exp--;
+    }
+    printf("%d\n", rs);
     return 0;
 }
 ```
