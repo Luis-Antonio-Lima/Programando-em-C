@@ -271,3 +271,118 @@ int main() {
     return 0;
 }
 ```
+
+#### Arquivo for1.c
+
+```c
+#include <stdio.h>
+
+int main (){
+    int x;
+    for(x = 1; x <= 10; x++){
+        printf("%d\n", x);
+    }
+    return 0;
+}
+```
+
+#### Arquivo tabuada.c
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, num2;
+    printf ("Digite um número para a tabuada:\n");
+    scanf("%d",&num);
+    for (num2 = 1; num2 <= 10; num2++){
+        printf ("%d x %d = %d\n",num,num2,(num*num2));
+    }
+    return 0;
+}
+```
+
+#### Arquivo expoente.c
+
+```c
+#include <stdio.h>
+
+int main() {
+    float base, exp;
+    float res = 1.0;
+    printf ("Digite um número decimal:\n");
+    scanf("%f",&base);
+    printf ("Digite um expoente:\n");
+    scanf("%f",&exp);
+
+    for (int i = 0; i < exp; i++){
+        res *= base; //res = res * base
+    }
+    printf ("O resultado de %2.2f elevado a %2.2f é %2.2f\n", base,exp,res);
+
+    return 0;
+}
+```
+
+#### Coleções; colecao1.c
+
+```c
+// Array é u conjunto de dados sobre um determinado
+// assunto. Podemos falar de valores numéricos, textos,
+// datas, ou objetos
+#include <stdio.h>
+
+int main(){
+    int valores[5] = {10,5,8,12,7};
+    printf("%d\n", valores[2]);
+    return 0;
+}
+```
+
+#### Coleções; colecao2.c
+
+```c
+#include <stdio.h>
+
+int main() {
+    int loud[10] = {1,21,11,8,19,45,7,24,26,18};
+    int soma = 0, media = 0, i;
+    for(i = 0; i <= 9; i++){
+        soma += loud[i];
+    }
+    printf("O resultado da soma é %d\n", soma);
+    for(i = 0; i <= 9; i++){
+        media += loud[i];
+    }
+    printf("O resultado da média é %d\n", (media/10));
+    for(i = 0; i <= 9; i++){
+        if (loud[i] % 2 == 0){
+            printf("%d\n", loud[i]);
+        }
+    }
+    return 0;
+}
+```
+
+#### Coleções; colecoes_iguais.c
+
+```c
+#include <stdio.h>
+
+int main() {
+    int c1[10] = {10,5,68,8,47,12,54,13,62,11};
+
+    int c2[15] = {11,5,62,112,84,76,12,55,59,85,13,0,14,19,18};
+
+    int i, w;
+
+    for(i = 0; i <= 9; i++){
+        for (w = 0; w <= 14; w++) {
+            if (c1[i] == c2[w]) {
+            printf("%d\n", c1[i]);
+            }
+        }
+    }
+    return 0;
+}
+```
