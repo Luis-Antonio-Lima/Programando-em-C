@@ -386,3 +386,26 @@ int main() {
     return 0;
 }
 ```
+
+#### Primeiro arquivo em h: principal.h
+
+```c
+#include <stdio.h>
+
+int quadrado (int x, int y){
+    return x * y;
+}
+```
+
+#### Arquivo principal.c
+
+```c
+#include <stdio.h>
+#include "primeiro.h"
+
+int main(){
+    int rs = quadrado(5,7);
+    printf ("A área do quadrado de 5 e 7 é %d\n", rs);
+    return 0;
+}
+```
