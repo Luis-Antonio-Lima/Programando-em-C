@@ -1,5 +1,5 @@
 # Estudo da Linguagem C
-## Neste repositório será e publicando arquvos escritos em C
+## Neste repositório será e publicando arquivos escritos em C
 <img src="./img/c.png" height="150" width="150">
 
 ### Abaixo é representado os arquivos deste repositório
@@ -493,5 +493,104 @@ int main() {
     printf("O resultado é %d\n", rs);
     return 0;
 
+}
+```
+
+#### Arquivo malloc1.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+    int *ptr_int;
+    ptr_int = (int *)malloc(sizeof(int));
+
+    printf("Endereço reservado %p\n", ptr_int);
+
+    if(ptr_int == NULL){
+        printf("Erro ao tentar alocar memória\n");
+        return 1; //Para a execução do programa
+    }
+
+    printf("Digite um número: \n");
+    scanf("%d", ptr_int);
+
+    printf("O valor digitado é %d e ele está em %p\n", *ptr_int,ptr_int);
+    free(ptr_int);
+    return 0;
+}
+```
+
+#### Arquivo malloc2.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *array;
+    int tamanho = 5;
+
+    array = (int *)malloc(tamanho * sizeof(int));
+
+    if(array == NULL) {
+        printf("Erro na alocação de memória\n");
+        return 1;
+    }
+
+    for(int i = 0; i < tamanho; i++){
+        array[i] = i + 1;
+    }
+
+    printf("Exibindo os dados do array\n");
+    for(int j = 0; j < tamanho; j++){
+        printf("%d - ", array[j]);
+    }
+    
+    free(array);
+    return 0;
+}
+```
+
+#### Arquivo malloc3.c
+
+```c
+#include <stdio.h>
+
+int main() {
+    FILE *arquivo;
+    char texto[100];
+
+    //Abre o arquivo para escrita
+    arquivo = fopen("exemplo.txt", "w");
+
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo. \n");
+        return 1;
+    }
+
+    //Esreve no arquivo
+    fprintf(arquivo, "Olá, este arquivo é um exemplo de manipulação de arquivos em C.");
+
+    //Fecha o arquivo
+    fclose(arquivo);
+
+    //Abre o arquivo para leitura
+    arquivo = fopen("exemplo.txt", "r");
+
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
+
+    //Lê o conteúdo do arquivo e imprimena tela
+    fgets(texto, 100, arquivo);
+    printf("Conteúdo do arquivo: %s\n", texto);
+
+    //Fecha o arquivo
+    fclose(arquivo);
+
+    return 0;
 }
 ```
